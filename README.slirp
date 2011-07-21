@@ -1,0 +1,23 @@
+This is a build of Slirp for Android.
+
+It was built on device using the gcc dist from http://rwiki.sciviews.org/doku.php?id=getting-started:installation:android
+
+I used the Slirp 1.0.16 with the 1.0.17 patch from http://slirp.sourceforge.net/
+
+Step to build:
+
+Replace all instances of /bin/sh by /system/bin/sh in the configure script.
+
+Run the configure script
+
+Add the following to config.h:
+#define HAVE_RANDOM 1
+#define HAVE_SRANDOM 1
+#define FULL_BOLT 1
+
+
+Apparently random and sradom were misdetected by the configure script.
+
+I also enabled FULL_BOLT because I couldn't get any speed without it even
+when setting a very high baudrate. Not sure if it's an Android issue.
+
