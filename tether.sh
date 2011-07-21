@@ -19,9 +19,4 @@ $ADB shell "iptables -t nat -A POSTROUTING -j MASQUERADE"
 echo "Connecting to the phone via 'adb ppp'..."
 $ADB ppp "shell:pppd nodetach noauth noipdefault ms-dns 8.8.8.8 ms-dns 8.8.4.4 /dev/tty" nodetach noauth noipdefault defaultroute usepeerdns notty 10.0.0.1:10.0.0.2
 
-echo "Waiting for the interface to come up..."
-until ifconfig | grep -q 10.0.0.1; do sleep 1; done
-
-echo "Should be connected now. Pining www.example.com"
-ping -c2 www.example.com
-
+echo "Done."
