@@ -17,13 +17,10 @@ $ADB shell "iptables -t nat -F"
 $ADB shell "iptables -t nat -A POSTROUTING -j MASQUERADE"
 
 echo "Connecting to the phone via 'adb ppp'..."
-$ADB ppp "shell:pppd nodetach noauth noipdefault /dev/tty" nodetach noauth noipdefault notty 10.0.0.1:10.0.0.2
+$ADB ppp "shell:pppd nodetach noauth noipdefault /dev/tty" nodetach noauth noipdefault defaultroute notty 10.0.0.1:10.0.0.2
 
 echo "Waiting for the interface to come up..."
 until ifconfig | grep -q 10.0.0.1; do sleep 1; done
-
-echo "Configuring route..."
-route add default gw 10.0.0.2
 
 echo "Using Gooogle public DNS"
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
