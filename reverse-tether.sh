@@ -15,13 +15,7 @@ iptables -t nat -F
 iptables -t nat -A POSTROUTING -j MASQUERADE
 
 echo "Connecting to the phone via 'adb ppp'..."
-$ADB ppp "shell:pppd nodetach noauth noipdefault /dev/tty" nodetach noauth noipdefault notty 10.0.0.1:10.0.0.2
-
-echo "Waiting for the interface to come up..."
-until ifconfig | grep -q 10.0.0.1; do sleep 1; done
-
-echo "Configuring route on the phone..."
-$ADB shell route add default gw 10.0.0.1 dev ppp0
+$ADB ppp "shell:pppd nodetach noauth noipdefault defaultroute /dev/tty" nodetach noauth noipdefault notty 10.0.0.1:10.0.0.2
 
 echo "Done."
 
