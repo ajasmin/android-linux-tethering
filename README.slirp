@@ -4,7 +4,7 @@ See http://ajasmin.wordpress.com/2011/07/24/android-usb-tethering-with-a-linux-p
 
 This was built on device using the gcc dist from http://rwiki.sciviews.org/doku.php?id=getting-started:installation:android
 
-I used the Slirp 1.0.16 with the 1.0.17 patch from http://slirp.sourceforge.net/
+I used the Slirp 1.0.16 source with the 1.0.17 patch applied from http://slirp.sourceforge.net/
 
 Step to build:
 
