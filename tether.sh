@@ -1,7 +1,7 @@
 # Android <-> Linux Tethering Script for Rooted Phones
 # This script tethers the internet from the phone to your PC
 
-# See http://ajasmin.wordpress.com/
+# See http://ajasmin.wordpress.com/2011/07/24/android-usb-tethering-with-a-linux-pc/
 
 # Requires a rooted phone with netfilter and pppd
 
