@@ -1,5 +1,8 @@
 # Linux <-> Android Reverse Tethering Script
 # This script tether the internet from your PC *to* the phone
+# Some apps will not recognize the connection
+
+# See http://ajasmin.wordpress.com/
 
 # Path to ADB
 export ADB=/opt/android-sdk-linux_x86/platform-tools/adb

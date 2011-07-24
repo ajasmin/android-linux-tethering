@@ -2,6 +2,8 @@
 
 # This script tether the internet from the phone to your PC using Slirp
 
+# See http://ajasmin.wordpress.com/
+
 # Path to ADB
 export ADB=/opt/android-sdk-linux_x86/platform-tools/adb
 
